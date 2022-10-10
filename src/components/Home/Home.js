@@ -9,7 +9,7 @@ const Home = () => {
     return (
         <>
             <header className='header flex'>
-                <div className='container mx-auto text-white md:text-start text-center md:w-2/4 mt-14 md:ml-10 mx-3'>
+                <div className='container mx-auto text-white md:text-start text-center md:w-2/4 mt-14 md:ml-10'>
                     <h1 className='md:text-5xl text-3xl mb-5'>Welcome To
                         <span className='text-amber-600 font-bold mx-3'>TEST SKILLS</span>
                         <br />Web App!!!

@@ -8,10 +8,9 @@ const QuizDetails = () => {
 
     return (
         <div>
-            <h1 className='text-5xl font-bold text-center my-16'>{name}</h1>
-
+            <h1 className='md:text-5xl text-4xl font-bold text-center my-16'>Quiz Topics : {name}</h1>
             {/* showed all the question */}
-            <div className='m-10 mx-40'>
+            <div className='lg:mx-40 md:mx-10 mx-3'>
                 {
                     questions.map(question => <Question
                         key={question.id}
