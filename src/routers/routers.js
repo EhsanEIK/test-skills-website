@@ -12,7 +12,11 @@ const router = createBrowserRouter([
         errorElement: <Error></Error>,
         children: [
             { path: '/', element: <Home></Home> },
-            { path: '/home', element: <Home></Home> },
+            {
+                path: '/home',
+                element: <Home></Home>,
+                loader: () => fetch('https://openapi.programming-hero.com/api/quiz')
+            },
             { path: '/statistics', element: <Statistics></Statistics> },
             { path: '/blogs', element: <Blogs></Blogs> },
         ]
