@@ -17,6 +17,8 @@ const Home = () => {
                     <p>This is an Quiz Test website. Here you can test your skills on your technology knowledge. This is an very popular website in the world now! So, why are you waiting?!! Enjoy the quiz and check you ability.</p>
                 </div>
             </header>
+
+            {/* showed all the topics */}
             <section className='container mx-auto my-32'>
                 <h1 className='text-4xl text-center font-semibold mb-20'>Test Your Skill on Following Topics</h1>
                 <div className='grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5 md:mx-0 mx-3'>
