@@ -31,8 +31,8 @@ const QuizDetails = () => {
                 </div>
             </div>
             {/* correct ans show card */}
-            <div className='md:static w-full fixed bottom-0 md:mt-44 mt-10'>
-                <p className='bg-slate-300 text-xl font-bold text-center sticky top-0 mb-11 py-20'>
+            <div className='w-full md:static fixed bottom-0 md:mt-44 mt-10'>
+                <p className='bg-slate-300 text-xl font-bold text-center sticky top-24 mb-11 py-20'>
                     <span>Total Marks: {questions.length}</span><br />
                     <span className='text-green-700'>Correct Ans: {correctAnsCart.length}</span><br />
                     <span className='text-red-700'>Wrong Ans: {questions.length - correctAnsCart.length}</span>
