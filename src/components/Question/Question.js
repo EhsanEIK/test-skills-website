@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { EyeIcon } from '@heroicons/react/24/solid'
@@ -30,7 +29,7 @@ const Question = ({ questionDetails, handleClick }) => {
                     options.map((option, idx) => {
                         const optionId = idx + option.slice(0, 10);
                         return (
-                            <div onClick={() => checkAnswer(optionId)} key={optionId} className="flex items-center mb-4" >
+                            <div onChange={() => checkAnswer(optionId)} key={optionId} className="flex items-center mb-4" >
                                 <input id={optionId} type="radio" name={id} value={option} className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300" />
                                 <label htmlFor={optionId} className="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">{option}</label>
                             </div>
