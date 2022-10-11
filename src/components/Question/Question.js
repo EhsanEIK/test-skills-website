@@ -1,19 +1,28 @@
 import React, { useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { EyeIcon } from '@heroicons/react/24/solid'
 
 const Question = ({ questionDetails, handleClick }) => {
     const { id, question, options, correctAnswer } = questionDetails;
 
     const checkAnswer = (optionsId) => {
-        console.log(optionsId)
         document.getElementById(optionsId).value === correctAnswer ? toast.success("Corrent Answer!") : toast.error("Wrong Answer!");
         document.getElementById(optionsId).value === correctAnswer && (handleClick(optionsId));
     }
 
+    const showCorrectAnswerByEyeIcon = () => {
+        toast.success(`Correct Answer is: ${correctAnswer}`);
+    }
+
     return (
         <div className='border-2 p-5 mb-10'>
-            <h2 className='text-lg font-bold mb-5'>{question.slice(3, question.length - 4)}</h2>
+            <div className='flex justify-between'>
+                <h2 className='text-lg font-bold mb-5'>{question.slice(3, question.length - 4)}</h2>
+                <button onClick={showCorrectAnswerByEyeIcon}>
+                    <EyeIcon className="h-6 w-6 text-blue-500" />
+                </button>
+            </div>
 
             {/* showed all the options of each questions */}
             <div className='grid md:grid-cols-2 grid-cols-1 gap-5'>
