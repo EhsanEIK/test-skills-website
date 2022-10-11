@@ -1,0 +1,8 @@
+.blogs-header {
+    background-image: url(../../images/bg-blogs.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 490px;
+}

@@ -17,11 +17,21 @@ const QuizDetails = () => {
             const newCorrectAnsCart = [...correctAnsCart, id]
             setCorrectAnsCart(newCorrectAnsCart);
         }
+        const rest = wrongAnsCart.filter(option => option !== id);
+        setWrongAnsCart(rest);
     }
 
     // to count total wrong answer
-    const [wrongAnsCart, setWrongAnsCart] = useState(0);
-    const handleClickWrongAns = () => setWrongAnsCart(wrongAnsCart + 1);
+    const [wrongAnsCart, setWrongAnsCart] = useState([]);
+    const handleClickWrongAns = id => {
+        const exist = wrongAnsCart.find(option => option === id);
+        if (!exist) {
+            const newWrongAnsCart = [...wrongAnsCart, id]
+            setWrongAnsCart(newWrongAnsCart);
+        }
+        const rest = correctAnsCart.filter(option => option !== id);
+        setCorrectAnsCart(rest);
+    }
 
     return (
         <div className='container mx-auto grid lg:grid-cols-6 md:grid-cols-4 grid-cols-1'>
@@ -43,7 +53,7 @@ const QuizDetails = () => {
                 <p className='bg-slate-300 text-xl font-bold text-center sticky top-24 mb-11 py-20'>
                     <span>Total Marks: {questions.length}</span><br />
                     <span className='text-green-700'>Correct Ans: {correctAnsCart.length}</span><br />
-                    <span className='text-red-700'>Wrong Ans: {wrongAnsCart}</span>
+                    <span className='text-red-700'>Wrong Ans: {wrongAnsCart.length}</span>
                 </p>
             </div>
             <ToastContainer></ToastContainer>

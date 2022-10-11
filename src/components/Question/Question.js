@@ -13,11 +13,11 @@ const Question = ({ questionDetails }) => {
         const answer = document.getElementById(optionsId).value;
         if (answer === correctAnswer) {
             toast.success("Corrent Answer!");
-            handleClickCorrectAns(optionsId);
+            handleClickCorrectAns(id);
         }
         else {
             toast.error("Wrong Answer!");
-            handleClickWrongAns();
+            handleClickWrongAns(id);
         }
     }
 
