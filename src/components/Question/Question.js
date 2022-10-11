@@ -2,12 +2,13 @@ import React, { useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-const Question = ({ questionDetails }) => {
+const Question = ({ questionDetails, handleClick }) => {
     const { id, question, options, correctAnswer } = questionDetails;
 
     const checkAnswer = (optionsId) => {
         console.log(optionsId)
         document.getElementById(optionsId).value === correctAnswer ? toast.success("Corrent Answer!") : toast.error("Wrong Answer!");
+        document.getElementById(optionsId).value === correctAnswer && (handleClick(optionsId));
     }
 
     return (
@@ -22,7 +23,7 @@ const Question = ({ questionDetails }) => {
                         return (
                             <div onClick={() => checkAnswer(optionId)} key={optionId} className="flex items-center mb-4" >
                                 <input id={optionId} type="radio" name={id} value={option} className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300" />
-                                <label className="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300" >{option}</label>
+                                <label className="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">{option}</label>
                             </div>
                         )
                     })
