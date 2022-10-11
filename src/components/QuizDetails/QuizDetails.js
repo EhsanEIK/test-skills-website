@@ -18,7 +18,7 @@ const QuizDetails = () => {
 
     return (
         <div className='container mx-auto grid lg:grid-cols-6 md:grid-cols-4 grid-cols-1'>
-            <div className='lg:col-span-5 md:col-span-3'>
+            <div className='lg:col-span-5 md:col-span-3 md:mb-20 mb-72'>
                 <h1 className='md:text-5xl text-4xl font-bold text-center my-16'>Quiz Topics : {name}</h1>
                 {/* showed all the question */}
                 <div className='md:mx-10 mx-3'>
@@ -31,7 +31,7 @@ const QuizDetails = () => {
                 </div>
             </div>
             {/* correct ans show card */}
-            <div className='md:static w-full fixed bottom-10 md:mt-44 mt-10'>
+            <div className='md:static w-full fixed bottom-0 md:mt-44 mt-10'>
                 <p className='bg-slate-300 text-xl font-bold text-center sticky top-0 mb-11 py-20'>
                     <span>Total Marks: {questions.length}</span><br />
                     <span className='text-green-700'>Correct Ans: {correctAnsCart.length}</span><br />

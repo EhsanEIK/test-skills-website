@@ -6,7 +6,7 @@ const Statistics = () => {
     const topics = useLoaderData().data;
 
     return (
-        <div className='container md:mx-auto px-2'>
+        <div className='container md:mx-auto mb-32 px-2'>
             <h1 className='text-4xl text-center font-bold mb-20 mt-10'>This is the Chart of Total Quiz on every topics</h1>
 
             <div className='flex justify-center'>
