@@ -11,7 +11,8 @@ const Question = ({ questionDetails, handleClick }) => {
     }
 
     const showCorrectAnswerByEyeIcon = () => {
-        toast.success(`Correct Answer is: ${correctAnswer}`);
+        // toast.success(`Correct Answer is: ${correctAnswer}`);
+        <p className='text-center text-5xl'>Correct Answer is: {correctAnswer}</p>
     }
 
     return (

@@ -17,21 +17,26 @@ const QuizDetails = () => {
     }
 
     return (
-        <div>
-            <h1 className='md:text-5xl text-4xl font-bold text-center mt-16 mb-5'>Quiz Topics : {name}</h1>
-            <p className='text-xl font-bold text-center mb-11'>
-                <span>Total Marks: {questions.length}</span><br />
-                <span className='text-green-700'>Correct Ans: {correctAnsCart.length}</span><br />
-                <span className='text-red-700'>Wrong Ans: {questions.length - correctAnsCart.length}</span>
-            </p>
-            {/* showed all the question */}
-            <div className='lg:mx-40 md:mx-10 mx-3'>
-                {
-                    questions.map(question => <Question
-                        key={question.id}
-                        questionDetails={question}
-                        handleClick={handleClick}></Question>)
-                }
+        <div className='container mx-auto grid lg:grid-cols-6 md:grid-cols-4 grid-cols-1'>
+            <div className='lg:col-span-5 md:col-span-3'>
+                <h1 className='md:text-5xl text-4xl font-bold text-center my-16'>Quiz Topics : {name}</h1>
+                {/* showed all the question */}
+                <div className='md:mx-10 mx-3'>
+                    {
+                        questions.map(question => <Question
+                            key={question.id}
+                            questionDetails={question}
+                            handleClick={handleClick}></Question>)
+                    }
+                </div>
+            </div>
+            {/* correct ans show card */}
+            <div className='md:static w-full fixed bottom-10 md:mt-44 mt-10'>
+                <p className='bg-slate-300 text-xl font-bold text-center sticky top-0 mb-11 py-20'>
+                    <span>Total Marks: {questions.length}</span><br />
+                    <span className='text-green-700'>Correct Ans: {correctAnsCart.length}</span><br />
+                    <span className='text-red-700'>Wrong Ans: {questions.length - correctAnsCart.length}</span>
+                </p>
             </div>
             <ToastContainer></ToastContainer>
         </div>
