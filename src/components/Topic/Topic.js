@@ -15,7 +15,7 @@ const Topic = ({ topic }) => {
             <div className='flex justify-between mt-7 mb-5'>
                 <p className='text-lg'>Total Quiz: <span className='font-bold'>{total}</span></p>
                 <button onClick={() => handleToGetQuizDetails(id)} className='bg-rose-600 rounded-md w-2/5 px-3 py-1 hover:bg-rose-700'>
-                    <p className='text-white'>Details</p>
+                    <p className='text-white'>Start Quiz</p>
                 </button>
             </div>
         </div>

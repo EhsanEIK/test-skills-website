@@ -1,13 +1,24 @@
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { EyeIcon } from '@heroicons/react/24/solid'
+import { useContext } from 'react';
+import { QuestionContext } from '../QuizDetails/QuizDetails';
 
-const Question = ({ questionDetails, handleClick }) => {
+const Question = ({ questionDetails }) => {
+    const [handleClickCorrectAns, handleClickWrongAns] = useContext(QuestionContext);
     const { id, question, options, correctAnswer } = questionDetails;
 
+    // to check correct/wrong answer and then show a toast message 
     const checkAnswer = (optionsId) => {
-        document.getElementById(optionsId).value === correctAnswer ? toast.success("Corrent Answer!") : toast.error("Wrong Answer!");
-        document.getElementById(optionsId).value === correctAnswer && (handleClick(optionsId));
+        const answer = document.getElementById(optionsId).value;
+        if (answer === correctAnswer) {
+            toast.success("Corrent Answer!");
+            handleClickCorrectAns(optionsId);
+        }
+        else {
+            toast.error("Wrong Answer!");
+            handleClickWrongAns();
+        }
     }
 
     const showCorrectAnswerByEyeIcon = () => {
