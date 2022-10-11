@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { ToastContainer } from 'react-toastify';
 import { useLoaderData } from 'react-router-dom';
 import Question from '../Question/Question';
 
@@ -32,6 +33,7 @@ const QuizDetails = () => {
                         handleClick={handleClick}></Question>)
                 }
             </div>
+            <ToastContainer></ToastContainer>
         </div>
     );
 };
