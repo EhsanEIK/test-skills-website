@@ -11,14 +11,7 @@ const Question = ({ questionDetails }) => {
     // to check correct/wrong answer and then show a toast message 
     const checkAnswer = (optionsId) => {
         const answer = document.getElementById(optionsId).value;
-        if (answer === correctAnswer) {
-            toast.success("Corrent Answer!");
-            handleClickCorrectAns(id);
-        }
-        else {
-            toast.error("Wrong Answer!");
-            handleClickWrongAns(id);
-        }
+        answer === correctAnswer ? handleClickCorrectAns(id) : handleClickWrongAns(id);
     }
 
     const showCorrectAnswerByEyeIcon = () => {

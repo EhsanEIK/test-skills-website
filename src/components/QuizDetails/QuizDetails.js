@@ -1,5 +1,5 @@
 import React, { createContext, useState } from 'react';
-import { ToastContainer } from 'react-toastify';
+import { toast, ToastContainer } from 'react-toastify';
 import { useLoaderData } from 'react-router-dom';
 import Question from '../Question/Question';
 
@@ -14,11 +14,12 @@ const QuizDetails = () => {
     const handleClickCorrectAns = id => {
         const exist = correctAnsCart.find(option => option === id);
         if (!exist) {
-            const newCorrectAnsCart = [...correctAnsCart, id]
+            const newCorrectAnsCart = [...correctAnsCart, id];
             setCorrectAnsCart(newCorrectAnsCart);
         }
         const rest = wrongAnsCart.filter(option => option !== id);
         setWrongAnsCart(rest);
+        toast.success("Corrent Answer!");
     }
 
     // to count total wrong answer
@@ -26,11 +27,12 @@ const QuizDetails = () => {
     const handleClickWrongAns = id => {
         const exist = wrongAnsCart.find(option => option === id);
         if (!exist) {
-            const newWrongAnsCart = [...wrongAnsCart, id]
+            const newWrongAnsCart = [...wrongAnsCart, id];
             setWrongAnsCart(newWrongAnsCart);
         }
         const rest = correctAnsCart.filter(option => option !== id);
         setCorrectAnsCart(rest);
+        toast.error("Wrong Answer!");
     }
 
     return (
